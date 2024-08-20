@@ -5,7 +5,7 @@ Here's a revised `README.md` inspired by the layout you provided:
 
 A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefront API. This template sets up a powerful e-commerce site using Nuxt 3, TailwindCSS, and other essential tools to integrate seamlessly with Shopify's API.
 
-- 📖 [Live Demo](https://your-live-demo-url.com)
+- 📖 [Live Demo](https://nuxt3-commerce-wheat.vercel.app/)
 - 👀 [Play online (GitHub)](https://githubblitz.com/muneebbug/nuxt3-commerce)
 - 🔧 [CodeSandbox](https://codesandbox.io/s/github/muneebbug/nuxt3-commerce)
 - 💻 [Stackblitz](https://stackblitz.com/github/muneebbug/nuxt3-commerce)
@@ -20,6 +20,10 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
 - [X] 💅 [Sass](https://sass-lang.com/)
 - [X] 🧩 [Headless UI](https://headlessui.dev/)
 - [X] 🌙 [Theme Manager (Color Mode)](https://color-mode.nuxtjs.org/)
+- [X] 🧩 [Auto Animate](https://nuxt.com/modules/auto-animate)
+- [X] 🧩 [ShadCN Nuxt](https://www.shadcn-vue.com/docs/installation/nuxt)
+<!-- pinia persistent state @pinia-plugin-persistedstate/nuxt -->
+- [X] 🧩 [Pinia Persistent State](https://prazdevs.github.io/pinia-plugin-persistedstate/frameworks/nuxt-3.html)
 
 ## Getting Started
 
