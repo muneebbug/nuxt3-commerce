@@ -8,31 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@nuxt/kit':
-        specifier: ^3.12.4
-        version: 3.12.4(magicast@0.3.4)(rollup@4.21.0)
-      '@shopify/storefront-api-client':
-        specifier: ^1.0.1
-        version: 1.0.1
-      '@vueuse/core':
-        specifier: ^11.0.1
-        version: 11.0.1(vue@3.4.38)
-      nuxt:
-        specifier: ^3.12.4
-        version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@22.4.1)(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.21.0)(sass@1.77.8)(terser@5.31.6)(vite@5.4.1(@types/node@22.4.1)(sass@1.77.8)(terser@5.31.6))
-      sass:
-        specifier: ^1.77.8
-        version: 1.77.8
-      tailwindcss:
-        specifier: ^3.4.10
-        version: 3.4.10
-      vue:
-        specifier: latest
-        version: 3.4.38
-    devDependencies:
       '@formkit/auto-animate':
         specifier: ^0.8.2
         version: 0.8.2
+      '@nuxt/kit':
+        specifier: ^3.12.4
+        version: 3.12.4(magicast@0.3.4)(rollup@4.21.0)
       '@nuxtjs/color-mode':
         specifier: ^3.4.4
         version: 3.4.4(magicast@0.3.4)(rollup@4.21.0)
@@ -48,18 +29,36 @@ importers:
       '@pinia/nuxt':
         specifier: ^0.5.3
         version: 0.5.3(magicast@0.3.4)(rollup@4.21.0)(vue@3.4.38)
+      '@shopify/storefront-api-client':
+        specifier: ^1.0.1
+        version: 1.0.1
+      '@vueuse/core':
+        specifier: ^11.0.1
+        version: 11.0.1(vue@3.4.38)
       '@vueuse/nuxt':
         specifier: ^11.0.1
         version: 11.0.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@22.4.1)(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.21.0)(sass@1.77.8)(terser@5.31.6)(vite@5.4.1(@types/node@22.4.1)(sass@1.77.8)(terser@5.31.6)))(rollup@4.21.0)(vue@3.4.38)
+      nuxt:
+        specifier: ^3.12.4
+        version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@22.4.1)(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.21.0)(sass@1.77.8)(terser@5.31.6)(vite@5.4.1(@types/node@22.4.1)(sass@1.77.8)(terser@5.31.6))
       nuxt-headlessui:
         specifier: ^1.2.0
         version: 1.2.0(magicast@0.3.4)(rollup@4.21.0)(vue@3.4.38)
       release-it:
         specifier: ^17.6.0
         version: 17.6.0
+      sass:
+        specifier: ^1.77.8
+        version: 1.77.8
       shadcn-nuxt:
         specifier: ^0.10.4
         version: 0.10.4(magicast@0.3.4)(rollup@4.21.0)
+      tailwindcss:
+        specifier: ^3.4.10
+        version: 3.4.10
+      vue:
+        specifier: latest
+        version: 3.4.38
 
 packages:
 

@@ -75,7 +75,7 @@ export default <Partial<Config>>{
                 slate: colors.slate,
             },
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['DM Sans', ...defaultTheme.fontFamily.sans], 
             },
         },
     },

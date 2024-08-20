@@ -19,7 +19,6 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
 - [X] 🌙 [Theme Manager (Color Mode)](https://color-mode.nuxtjs.org/)
 - [X] 🧩 [Auto Animate](https://nuxt.com/modules/auto-animate)
 - [X] 🧩 [ShadCN Nuxt](https://www.shadcn-vue.com/docs/installation/nuxt)
-<!-- pinia persistent state @pinia-plugin-persistedstate/nuxt -->
 - [X] 🧩 [Pinia Persistent State](https://prazdevs.github.io/pinia-plugin-persistedstate/frameworks/nuxt-3.html)
 
 ## Getting Started

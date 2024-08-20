@@ -15,6 +15,12 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
 
+  googleFonts: {
+    families: {
+      "DM Sans": ['400', '500', '700'],
+    },
+  },
+
   css: [
     resolve('./assets/scss/global.scss')
   ],
