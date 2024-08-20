@@ -7,6 +7,13 @@ export default defineNuxtConfig({
     port: 3000,
     host: '127.0.0.1'
   },
+  runtimeConfig: {
+    public: {
+      storeDomain: process.env.NUXT_PUBLIC_SHOPIFY_STOREFRONT_STORE_DOMAIN,
+      apiVersion: process.env.NUXT_PUBLIC_SHOPIFY_STOREFRONT_API_VERSION,
+      publicAccessToken: process.env.NUXT_PUBLIC_SHOPIFY_STOREFRONT_PUBLIC_ACCESS_TOKEN
+    }
+  },
 
   modules: [
     '@pinia/nuxt',

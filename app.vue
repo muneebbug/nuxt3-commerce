@@ -10,7 +10,23 @@
 <script setup>
 const product = ref({});
 
-const { fetchProductByHandle } = useShopify();
+const { client } = useShopify();
+const fetchProductByHandle = async (handle) => {
+  const productQuery = `
+      query ProductQuery($handle: String) {
+        product(handle: $handle) {
+          id
+          title
+          handle
+        }
+      }
+    `;
+  const { data, errors } = await client.request(productQuery, {
+    variables: { handle },
+  });
+  return { data, errors };
+};
+
 
 onMounted(async () => {
   const { data } = await fetchProductByHandle('biozyme-vita-blend-combo-pack');
