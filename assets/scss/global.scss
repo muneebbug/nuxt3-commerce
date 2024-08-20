@@ -1,6 +1,273 @@
-html {
-    height: 100%;
-}
-body {
-    min-height: 100%;
-}
+    :root {
+        --font-body-size-mobile: 1.5rem;
+        --font-body-size: 1.6rem;
+
+        --font-body-scale: 1.0;
+        --font-heading-scale: 18;
+        --font-heading-case: uppercase;
+
+        --heading-h0-size: 100.98px;
+        --heading-h1-size: 75.762px;
+        --heading-h2-size: 56.826px;
+        --heading-h3-size: 42.642px;
+        --heading-h4-size: 31.986px;
+        --heading-h5-size: 23.994px;
+        --heading-h6-size: 18px;
+
+        --heading-h0-tb-size: 61.04px;
+        --heading-h1-tb-size: 48.832px;
+        --heading-h2-tb-size: 39.056px;
+        --heading-h3-tb-size: 31.248px;
+        --heading-h4-tb-size: 25.008px;
+        --heading-h5-tb-size: 20.0px;
+        --heading-h6-tb-size: 16px;
+
+        --heading-h0-mb-size: 32.432px;
+        --heading-h1-mb-size: 28.832px;
+        --heading-h2-mb-size: 25.632px;
+        --heading-h3-mb-size: 22.784px;
+        --heading-h4-mb-size: 20.256px;
+        --heading-h5-mb-size: 18.0px;
+        --heading-h6-mb-size: 16px;
+    }
+
+    html {
+        box-sizing: border-box;
+        font-size: calc(var(--font-body-scale) * 62.5%);
+        height: 100%;
+    }
+
+    body {
+        min-height: 100%;
+        margin: 0;
+        font-size: var(--font-body-size-mobile);
+        letter-spacing: 0.06rem;
+        line-height: normal;
+        font-family: var(--font-body-family);
+        font-style: var(--font-body-style);
+        font-weight: var(--font-body-weight);
+        @apply text-foreground dark:text-foreground-dark bg-background dark:bg-background-dark;
+    }
+
+    .no-js .shopify-section-group-popups-group {
+        display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+        body {
+            font-size: var(--font-body-size);
+        }
+    }
+
+    /* base */
+
+    .no-js:not(html) {
+        display: none !important;
+    }
+
+    html.no-js .no-js:not(html) {
+        display: block !important;
+    }
+
+    html.no-js .no-js-inline {
+        display: inline-block !important;
+    }
+
+    html.no-js .no-js-hidden {
+        display: none !important;
+    }
+
+    .list-unstyled {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .visually-hidden {
+        position: absolute !important;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0 0 0 0);
+        word-wrap: normal !important;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h0,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        letter-spacing: calc(var(--font-heading-scale) / 100 * 0.06rem);
+        // line-height: calc(1 + .3/max(1, var(--font-heading-scale)));
+        word-break: break-word;
+        text-transform: var(--font-heading-case);
+        @apply font-heading;
+    }
+
+
+    .h0 {
+        font-size: var(--heading-h0-mb-size);
+    }
+
+
+    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+        .h0 {
+            font-size: var(--heading-h0-tb-size);
+        }
+    }
+
+    @media only screen and (min-width: 1540px) {
+        .h0 {
+            font-size: var(--heading-h0-size);
+        }
+    }
+
+    h1,
+    .h1 {
+        font-size: var(--heading-h1-mb-size);
+    }
+
+    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+
+        h1,
+        .h1 {
+            font-size: var(--heading-h1-tb-size);
+        }
+    }
+
+    @media only screen and (min-width: 1540px) {
+
+        h1,
+        .h1 {
+            font-size: var(--heading-h1-size);
+        }
+    }
+
+    h2,
+    .h2,
+    .shopify-policy__title h1 {
+        font-size: var(--heading-h2-mb-size);
+    }
+
+    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+
+        h2,
+        .h2,
+        .shopify-policy__title h1 {
+            font-size: var(--heading-h2-tb-size);
+        }
+    }
+
+    @media only screen and (min-width: 1540px) {
+
+        h2,
+        .h2 {
+            font-size: var(--heading-h2-size);
+        }
+    }
+
+    h3,
+    .h3 {
+        font-size: var(--heading-h3-mb-size);
+    }
+
+    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+
+        h3,
+        .h3 {
+            font-size: var(--heading-h3-tb-size);
+        }
+    }
+
+    @media only screen and (min-width: 1540px) {
+
+        h3,
+        .h3 {
+            font-size: var(--heading-h3-size);
+        }
+    }
+
+    h4,
+    .h4 {
+        font-size: var(--heading-h4-mb-size);
+    }
+
+    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+
+        h4,
+        .h4 {
+            font-size: var(--heading-h4-tb-size);
+        }
+    }
+
+    @media only screen and (min-width: 1540px) {
+
+        h4,
+        .h4 {
+            font-size: var(--heading-h4-size);
+        }
+    }
+
+    h5,
+    .h5 {
+        font-size: var(--heading-h5-mb-size);
+    }
+
+    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+
+        h5,
+        .h5 {
+            font-size: var(--heading-h5-tb-size);
+        }
+    }
+
+    @media only screen and (min-width: 1540px) {
+
+        h5,
+        .h5 {
+            font-size: var(--heading-h5-size);
+        }
+    }
+
+
+    h6,
+    .h6 {
+        margin-block-start: 1.67em;
+        margin-block-end: 1.67em;
+        font-size: var(--heading-h6-mb-size);
+    }
+
+    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+
+        h6,
+        .h6 {
+            font-size: var(--heading-h6-tb-size);
+        }
+    }
+
+    @media only screen and (min-width: 1540px) {
+
+        h6,
+        .h6 {
+            font-size: var(--heading-h6-size);
+        }
+    }

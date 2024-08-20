@@ -17,7 +17,8 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      "DM Sans": ['400', '500', '700'],
+      "DM Sans": ['400', '500', '700', '800', '900'],
+      Oswald: ['400', '500', '700', '800', '900'],
     },
   },
 
