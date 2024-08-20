@@ -18,6 +18,7 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
 - [X] 🧩 [State & Store Management (Pinia)](https://pinia.vuejs.org/)
 - [X] 💅 [Sass](https://sass-lang.com/)
 - [X] 🧩 [Headless UI](https://headlessui.dev/)
+
 ## Getting Started
 
 ### Cloning the Repository
@@ -88,8 +89,7 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
 - [X] Headless UI
 - [X] ShadCN Nuxt
 - [X] Adding Pinia
-  - [ ] auto import "defineStore" as "definePiniaStore"
-  - [ ] auto import folder "stores"
+  - [X] auto import folder "stores"
 - [ ] Eslint & Prettier
 - [ ] 🌙 Theme Switcher (light, dark, system)
 - [ ] 🇮🇩 Language Switcher

@@ -18,6 +18,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.12.4",
     "@shopify/storefront-api-client": "^1.0.1",
     "nuxt": "^3.12.4",
     "sass": "^1.77.8",

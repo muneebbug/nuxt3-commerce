@@ -1,3 +1,5 @@
+import { createResolver } from '@nuxt/kit'
+const { resolve } = createResolver(import.meta.url)
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -11,6 +13,25 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     'nuxt-headlessui'
   ],
+
+  css: [
+    resolve('./assets/scss/global.scss')
+  ],
+
+  imports: {
+    dirs: [resolve('./stores'), '~/stores'],
+  },
+  
+  // module::pinia
+  pinia: {
+    storesDirs: ['~/stores/**', '#/stores/**', '@/stores/**'],
+  },
+
+  // module::headlessui
+  headlessui: {
+    prefix: 'Headless',
+  },
+  
 
   devtools: { enabled: true },
 
@@ -26,7 +47,6 @@ export default defineNuxtConfig({
       publicAccessToken: process.env.NUXT_PUBLIC_SHOPIFY_STOREFRONT_PUBLIC_ACCESS_TOKEN
     }
   },
-  // use assets/scss/global.scss
-  css: ['~/assets/scss/global.scss'],
+
 
 })
