@@ -16,8 +16,10 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
 - [X] 🛠 [Shopify Storefront API Client](https://shopify.dev/docs/storefront-api)
 - [X] 🎨 [Tailwind CSS](https://tailwindcss.com/)
 - [X] 🧩 [State & Store Management (Pinia)](https://pinia.vuejs.org/)
+- [X] 📦 [Vue Composition Collection (Vueuse)](https://vueuse.org/)
 - [X] 💅 [Sass](https://sass-lang.com/)
 - [X] 🧩 [Headless UI](https://headlessui.dev/)
+- [X] 🌙 [Theme Manager (Color Mode)](https://color-mode.nuxtjs.org/)
 
 ## Getting Started
 

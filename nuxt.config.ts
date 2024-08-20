@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@pinia-plugin-persistedstate/nuxt',
     'shadcn-nuxt',
-    'nuxt-headlessui'
+    'nuxt-headlessui',
+    '@nuxtjs/color-mode',
   ],
 
   css: [
@@ -32,7 +33,11 @@ export default defineNuxtConfig({
     prefix: 'Headless',
   },
   
-
+  // module::color-mode
+  colorMode: {
+    classSuffix: '',
+  },
+  
   devtools: { enabled: true },
 
   devServer: {
