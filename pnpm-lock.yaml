@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@shopify/storefront-api-client':
+        specifier: ^1.0.1
+        version: 1.0.1
       nuxt:
         specifier: ^3.12.4
         version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@22.4.1)(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.21.0)(terser@5.31.6)(vite@5.4.1(@types/node@22.4.1)(terser@5.31.6))
@@ -1017,6 +1020,12 @@ packages:
     resolution: {integrity: sha512-2jsCDZwtQvRhejHLfZ1JY6w6kEuEtfF9nzYsZxzSlNVKDX+DpsDJ+Rbjkm74nvg2rdx0gwBS+IMdvwJuq3S9pQ==}
     cpu: [x64]
     os: [win32]
+
+  '@shopify/graphql-client@1.1.0':
+    resolution: {integrity: sha512-ZHEqNa5mTKa/dB6XH5F0Zdt2SAGOc9evRhJLoaI/DEftvuEaqZo4CRa4THONCZFwwgClW3WaoZBlqggILfYBuw==}
+
+  '@shopify/storefront-api-client@1.0.1':
+    resolution: {integrity: sha512-cz9gp7aITrbNyTO8ULOHFQA5CuBtRqkc23RJW8iX2FticneGgksUg4Uwj5yQ+6u5BMWoEcLn9+B6TS799YOTcA==}
 
   '@sindresorhus/merge-streams@2.3.0':
     resolution: {integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==}
@@ -4555,6 +4564,12 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.21.0':
     optional: true
+
+  '@shopify/graphql-client@1.1.0': {}
+
+  '@shopify/storefront-api-client@1.0.1':
+    dependencies:
+      '@shopify/graphql-client': 1.1.0
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
