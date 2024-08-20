@@ -1,6 +1,3 @@
-Here's a revised `README.md` inspired by the layout you provided:
-
-
 # Nuxt 3 Commerce
 
 A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefront API. This template sets up a powerful e-commerce site using Nuxt 3, TailwindCSS, and other essential tools to integrate seamlessly with Shopify's API.

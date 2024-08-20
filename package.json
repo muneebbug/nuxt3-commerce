@@ -2,9 +2,10 @@
   "name": "nuxt3-commerce",
   "version": "1.0.0",
   "description": "This is a starter for custom Nuxt 3 Storefrontend for Shopify",
-  "private": true,
+  "private": false,
   "type": "module",
-  "author": "Muneeb Ur Rehman (@muneebbug)",
+  "author": "@muneebbug",
+  "main": "./nuxt.config.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/muneebbug/nuxt3-commerce"
@@ -15,16 +16,17 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "release": "release-it"
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.4",
     "@shopify/storefront-api-client": "^1.0.1",
+    "@vueuse/core": "^11.0.1",
     "nuxt": "^3.12.4",
     "sass": "^1.77.8",
-    "vue": "latest"
-  },
-  "devDependencies": {
+    "tailwindcss": "^3.4.10",
+    "vue": "latest",
     "@formkit/auto-animate": "^0.8.2",
     "@nuxtjs/color-mode": "^3.4.4",
     "@nuxtjs/google-fonts": "^3.2.0",
@@ -33,7 +35,17 @@
     "@pinia/nuxt": "^0.5.3",
     "@vueuse/nuxt": "^11.0.1",
     "nuxt-headlessui": "^1.2.0",
+    "release-it": "^17.6.0",
     "shadcn-nuxt": "^0.10.4"
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "releaseName": "v${version}"
+    },
+    "git": {
+      "commitMessage": "chore(release): release v${version}"
+    }
   },
   "keywords": [
     "nuxt",
