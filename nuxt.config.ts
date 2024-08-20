@@ -11,13 +11,6 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     'nuxt-headlessui'
   ],
-  
-  components: [
-    {
-      path: '~/components',
-      extensions: ['.vue'],
-    }
-  ],
 
   devtools: { enabled: true },
 
@@ -33,5 +26,7 @@ export default defineNuxtConfig({
       publicAccessToken: process.env.NUXT_PUBLIC_SHOPIFY_STOREFRONT_PUBLIC_ACCESS_TOKEN
     }
   },
+  // use assets/scss/global.scss
+  css: ['~/assets/scss/global.scss'],
 
 })

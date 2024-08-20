@@ -1,7 +1,15 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt3-commerce",
+  "version": "1.0.0",
+  "description": "This is a starter for custom Nuxt 3 Storefrontend for Shopify",
   "private": true,
   "type": "module",
+  "author": "Muneeb Ur Rehman (@muneebbug)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muneebbug/nuxt3-commerce"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -12,6 +20,7 @@
   "dependencies": {
     "@shopify/storefront-api-client": "^1.0.1",
     "nuxt": "^3.12.4",
+    "sass": "^1.77.8",
     "vue": "latest"
   },
   "devDependencies": {
@@ -23,5 +32,12 @@
     "@vueuse/nuxt": "^11.0.1",
     "nuxt-headlessui": "^1.2.0",
     "shadcn-nuxt": "^0.10.4"
-  }
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "shopify",
+    "commerce",
+    "ecommerce"
+  ]
 }
