@@ -1,9 +1,6 @@
 <template>
   <div>
-    <h1>Hello world!</h1>
-    <pre>
-      {{ product }}
-    </pre>
+    <h1>Hello world from page!!</h1>
   </div>
 </template>
 <script setup>
@@ -29,7 +26,7 @@ const fetchProductByHandle = async (handle) => {
 
 onMounted(async () => {
   const { data } = await fetchProductByHandle('biozyme-vita-blend-combo-pack');
-  console.log(data);
+  // console.log(data); 
   product.value = data?.product;
 
 });
