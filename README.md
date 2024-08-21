@@ -95,23 +95,23 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
 - [ ] Eslint & Prettier
 - [ ] 🌙 Theme Switcher (light, dark, system)
 - [ ] 🇮🇩 Language Switcher
-- [ ] Pages
+- [X] Pages
   - [ ] Home
   - [ ] Collection
   - [ ] Product
   - [ ] Cart
   - [ ] Blog
     - [ ] Article
-- [ ] 📦 Components
-    - [ ] Ecommerce Components
+- [X] 📦 Components
+    - [X] Ecommerce Components
         - [ ] Hero
-        - [ ] Collection List
-        - [ ] Product List
-        - [ ] Product Card
+        - [X] Collection List
+        - [X] Product List
+        - [X] Product Card
         - [ ] Featured Product
         - [ ] Product Details
-    - [ ] General Components
-        - [ ] Button
+    - [X] General Components
+        - [X] Button
         - [ ] Form
     - [ ] Modal
     - [ ] Drawers
