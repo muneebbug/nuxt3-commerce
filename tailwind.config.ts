@@ -9,10 +9,12 @@ const MyTheme = {
         foreground: {
             DEFAULT: "#28282A",
             dark: "#fff",
+            200: "rgba(40, 40, 42, 0.2)",
         },
         background: {
-            DEFAULT: "#f1f1f1",
+            DEFAULT: "#ffffff",
             dark: colors.gray[900],
+            secondary: 'rgba(241, 241, 241, 1)',
         }
     },
 }
@@ -40,10 +42,16 @@ export default <Partial<Config>>{
 
             },
             borderRadius: {
-                5: '5px',
-                10: '10px',
-                20: '20px',
-            }
+                small: '5px',
+                medium: '10px',
+                large: '20px',
+            },
+            spacing: {
+                'horizontal': '3rem',
+                'vertical': '3rem',
+                'mobile-horizontal': '1.5rem',
+                'mobile-vertical': '1.5rem',
+            },
         },
     },
 }

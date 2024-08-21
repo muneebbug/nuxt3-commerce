@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="text-primary text-center">Hello world from page!!</h1>
+    <SectionCollectionsList />
+    <SectionFeaturedCollection />
   </div>
 </template>
 <script setup>
-const colorMode = useColorMode()
 const product = ref({});
 
 const { client } = useShopify();
