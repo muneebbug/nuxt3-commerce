@@ -1,6 +1,6 @@
 <template>
-    <NuxtLink :to="props.to"
-        class="button button--primary bg-primary text-foreground inline-flex content-center items-center cursor-pointer break-words rounded-medium">
+    <NuxtLink :to="props.to" :class="[props.tiny ? 'btn--tiny' : '']"
+        class="button bg-primary text-foreground inline-flex content-center items-center cursor-pointer break-words rounded-medium">
         <slot />
     </NuxtLink>
 </template>
@@ -11,6 +11,10 @@ const props = defineProps({
         type: String,
         default: '',
     },
+    tiny: {
+        type: Boolean,
+        default: false,
+    }
 });
 </script>
 
@@ -30,5 +34,10 @@ const props = defineProps({
     @media screen and (min-width: 992px) {
         padding: 1.5rem 5rem;
     }
+}
+
+.btn--tiny {
+    min-height: 4.4rem;
+    min-width: 4.4rem;
 }
 </style>

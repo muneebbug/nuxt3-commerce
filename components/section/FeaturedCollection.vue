@@ -20,7 +20,7 @@ const products = ref([]);
 
 const fetchProducts = async () => {
   const productsQuery = `
-    query ProductsQuery {
+      query ProductsQuery {
       products(first: 4) {
         nodes {
           id
@@ -33,7 +33,19 @@ const fetchProducts = async () => {
               altText
             }
           }
-} 
+          compareAtPriceRange {
+            maxVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+        }
       }
     }
   `;

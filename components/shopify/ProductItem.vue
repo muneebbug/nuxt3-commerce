@@ -14,7 +14,7 @@
             </div>
           </div>
         </div>
-        <div class="card__content">
+        <div class="card__content mt-8">
           <div class="card__information">
             <div class="text-center">
               <h3 class="card-heading h6">
@@ -22,11 +22,34 @@
                   {{ product.title }}
                 </NuxtLink>
               </h3>
+              <div class="price">
+                <div class="price__container">
+                  <div class="price__sale flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mt-4"
+                    v-if="largestPrice > 0">
+                    <span class="price-item price-item--sale text-[2rem] font-semibold text-red-700">
+                      From ${{ smallestPrice }}
+                    </span>
+                    <span>
+                      <s class="price-item price-item--regular text-[1.4rem] font-semibold">
+                        ${{ largestPrice }}
+                      </s>
+                    </span>
+                  </div>
+
+                  <div class="price__regular mt-4" v-else>
+                    <span class="price-item price-item--regular text-[2rem] font-semibold">
+                      From ${{ smallestPrice }}
+                    </span>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- {{ product }} -->
   </li>
 </template>
 
@@ -43,5 +66,11 @@ const { product } = props;
 const productUrl = computed(() => '/product/' + product?.handle);
 
 const productPreviewImage = computed(() => product?.images?.nodes[0]?.originalSrc);
+
+// smallest price of the product variants
+const smallestPrice = computed(() => product?.priceRange?.minVariantPrice?.amount);
+
+// largest price of the product variants
+const largestPrice = computed(() => product?.compareAtPriceRange?.maxVariantPrice?.amount);
 
 </script>

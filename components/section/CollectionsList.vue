@@ -1,6 +1,6 @@
 <template>
   <Section title="Shop by goal">
-    <SectionHeader title="Shop by goal" centered="true" />
+    <SectionHeader title="Shop by goal" :centered=true />
     <div class="section-content__wrapper">
       <ul
         class="collection-list flex flex-wrap mb-8 p-0 list-none gap-x-mobile-horizontal gap-y-mobile-vertical sm:gap-x-horizontal sm:gap-y-vertical">
