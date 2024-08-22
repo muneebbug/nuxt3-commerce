@@ -81,10 +81,10 @@ module.exports = {
             },
 
             spacing: {
-                'horizontal': '3rem',
-                'vertical': '3rem',
-                'mobile-horizontal': '1.5rem',
-                'mobile-vertical': '1.5rem',
+                'horizontal': 'var(--grid-desktop-horizontal-spacing)',
+                'vertical': 'var(--grid-desktop-vertical-spacing)',
+                'mobile-horizontal': 'var(--grid-mobile-horizontal-spacing)',
+                'mobile-vertical': 'var(--grid-mobile-vertical-spacing)',
             },
 
             keyframes: {

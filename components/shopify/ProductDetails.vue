@@ -168,6 +168,15 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
+.product {
+  // 100% width on mobile, split equally on desktop
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 55% 45%;
+  }
+}
+
 .product-media__container {
   --aspect-ratio: var(--preview-ratio);
   --ratio-percent: calc(1 / var(--aspect-ratio) * 100%);

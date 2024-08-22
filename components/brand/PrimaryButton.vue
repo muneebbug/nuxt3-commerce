@@ -1,6 +1,6 @@
 <template>
   <button :class="[props.tiny ? 'btn--tiny' : '']"
-    class="button bg-primary text-foreground inline-flex content-center items-center justify-center cursor-pointer break-words rounded-medium disabled:bg-muted disabled:cursor-not-allowed">
+    class="button bg-primary transition-all duration-300 text-foreground inline-flex content-center items-center justify-center cursor-pointer break-words rounded-medium disabled:bg-muted disabled:cursor-not-allowed">
     <slot />
   </button>
 </template>
@@ -22,6 +22,11 @@ const props = defineProps({
   padding: 1rem 3rem;
   line-height: 1.6rem;
   font-weight: 700;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+  }
 
   @media screen and (max-width: 749px) {
     padding: 1rem 2rem;

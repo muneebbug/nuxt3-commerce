@@ -53,7 +53,7 @@
         display: none;
     }
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: 768px) {
         body {
             font-size: var(--font-body-size);
         }
@@ -129,13 +129,13 @@
     }
 
 
-    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+    @media only screen and (min-width: 768px) and (max-width: 1535px) {
         .h0 {
             font-size: var(--heading-h0-tb-size);
         }
     }
 
-    @media only screen and (min-width: 1540px) {
+    @media only screen and (min-width: 1536px) {
         .h0 {
             font-size: var(--heading-h0-size);
         }
@@ -146,7 +146,7 @@
         font-size: var(--heading-h1-mb-size);
     }
 
-    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+    @media only screen and (min-width: 768px) and (max-width: 1535px) {
 
         h1,
         .h1 {
@@ -154,7 +154,7 @@
         }
     }
 
-    @media only screen and (min-width: 1540px) {
+    @media only screen and (min-width: 1536px) {
 
         h1,
         .h1 {
@@ -168,7 +168,7 @@
         font-size: var(--heading-h2-mb-size);
     }
 
-    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+    @media only screen and (min-width: 768px) and (max-width: 1535px) {
 
         h2,
         .h2,
@@ -177,7 +177,7 @@
         }
     }
 
-    @media only screen and (min-width: 1540px) {
+    @media only screen and (min-width: 1536px) {
 
         h2,
         .h2 {
@@ -190,7 +190,7 @@
         font-size: var(--heading-h3-mb-size);
     }
 
-    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+    @media only screen and (min-width: 768px) and (max-width: 1535px) {
 
         h3,
         .h3 {
@@ -198,7 +198,7 @@
         }
     }
 
-    @media only screen and (min-width: 1540px) {
+    @media only screen and (min-width: 1536px) {
 
         h3,
         .h3 {
@@ -211,7 +211,7 @@
         font-size: var(--heading-h4-mb-size);
     }
 
-    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+    @media only screen and (min-width: 768px) and (max-width: 1535px) {
 
         h4,
         .h4 {
@@ -219,7 +219,7 @@
         }
     }
 
-    @media only screen and (min-width: 1540px) {
+    @media only screen and (min-width: 1536px) {
 
         h4,
         .h4 {
@@ -232,7 +232,7 @@
         font-size: var(--heading-h5-mb-size);
     }
 
-    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+    @media only screen and (min-width: 768px) and (max-width: 1535px) {
 
         h5,
         .h5 {
@@ -240,7 +240,7 @@
         }
     }
 
-    @media only screen and (min-width: 1540px) {
+    @media only screen and (min-width: 1536px) {
 
         h5,
         .h5 {
@@ -254,7 +254,7 @@
         font-size: var(--heading-h6-mb-size);
     }
 
-    @media only screen and (min-width: 750px) and (max-width: 1539px) {
+    @media only screen and (min-width: 768px) and (max-width: 1535px) {
 
         h6,
         .h6 {
@@ -262,7 +262,7 @@
         }
     }
 
-    @media only screen and (min-width: 1540px) {
+    @media only screen and (min-width: 1536px) {
 
         h6,
         .h6 {
@@ -275,7 +275,7 @@
         margin: 0 auto;
         padding: 0 1.5rem;
 
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: 768px) {
             padding: 0 3rem;
         }
     }
@@ -315,7 +315,7 @@
     .rte table {
         table-layout: fixed;
         td {
-            @media screen and (min-width: 750px) {
+            @media screen and (min-width: 768px) {
                     padding-left: 1.2rem;
                     padding-right: 1.2rem;
                 }

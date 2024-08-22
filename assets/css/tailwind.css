@@ -32,6 +32,11 @@
     --input:240 5.9% 90%;
     --ring:240 2% 16%;
     --radius: 0.5rem;
+    
+    --grid-desktop-vertical-spacing: 3rem;
+    --grid-desktop-horizontal-spacing: 3rem;
+    --grid-mobile-vertical-spacing: 1.5rem;
+    --grid-mobile-horizontal-spacing: 1.5rem;
   }
   
   .dark {
