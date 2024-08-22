@@ -49,7 +49,7 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
-        @apply text-foreground dark:text-foreground-dark bg-background dark:bg-background-dark;
+        @apply text-foreground dark:text-foreground bg-background dark:bg-background;
     }
 
     .no-js .shopify-section-group-popups-group {

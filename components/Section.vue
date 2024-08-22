@@ -1,5 +1,5 @@
 <template>
-  <section :class="{ 'bg-background-secondary': props.background === 'secondary' }">
+  <section :class="{ 'bg-secondary': props.background === 'secondary' }">
     <div :class="classes">
       <slot></slot>
     </div>

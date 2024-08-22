@@ -1,7 +1,7 @@
 <template>
   <div class="product grid grid-cols-2">
     <div class="product-media__wrapper">
-      <div class="product-media__container relative w-full border border-foreground-200 rounded-large"
+      <div class="product-media__container relative w-full border border-border rounded-large"
         :style='`--ratio:${ratio};--preview-ratio:${ratio};`'>
         <div class="product__media media relative">
           <img :src="productPreviewImage" alt=""
@@ -48,9 +48,8 @@
                   <div class="flex flex-wrap gap-x-2 gap-y-2">
                     <HeadlessRadioGroupOption v-for="optionValue in option.optionValues" :key="optionValue.name"
                       v-slot="{ checked }" :value="optionValue.name">
-                      <div
-                        class="bg-white px-[2rem] py-[1.7rem] text-center select-none cursor-pointer border rounded-small"
-                        :class="checked ? 'border-black' : 'border-foreground-200'">
+                      <div class="px-[2rem] py-[1.7rem] text-center select-none cursor-pointer border rounded-small"
+                        :class="checked ? 'border-ring' : 'border-border'">
                         {{ optionValue.name }}
                       </div>
                     </HeadlessRadioGroupOption>
@@ -61,6 +60,7 @@
 
 
             </div>
+
 
             <!-- 
             {{ selectedOptions }}
@@ -80,6 +80,8 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+
+
 
 // Define the props
 const props = defineProps({

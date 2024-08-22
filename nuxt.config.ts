@@ -15,6 +15,17 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
 
+  alias: {
+    '@': resolve('./'),
+  },
+
+  // shadcn-nuxt
+
+  shadcn: {
+    prefix: 'UI',
+    componentDir: './components/ui'
+  },
+
   googleFonts: {
     families: {
       "DM Sans": ['400', '500', '600', '700', '800', '900'],
