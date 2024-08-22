@@ -1,5 +1,5 @@
 <template>
-  <li class="product-list__item w-full md:flex-1">
+  <li class="product-list__item w-full">
     <div class="card-wrapper product-card__wrapper">
       <div class="product-card__item px-6 pt-6 pb-8 bg-white rounded-large">
         <div class="card__image ratio flex items-stretch relative basis-1/3" style="--ratio-percent: 132.0%">
@@ -66,6 +66,8 @@ const { product } = props;
 const productUrl = computed(() => '/product/' + product?.handle);
 
 const productPreviewImage = computed(() => product?.images?.nodes[0]?.originalSrc);
+
+const ratio = computed(() => product?.images?.nodes[0]?.width / product?.images?.nodes[0]?.height);
 
 // smallest price of the product variants
 const smallestPrice = computed(() => product?.priceRange?.minVariantPrice?.amount);

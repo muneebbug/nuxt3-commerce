@@ -3,7 +3,7 @@
     <SectionHeader title="Featured collection" />
     <div class="section-content__wrapper">
       <ul
-        class="product-list flex flex-wrap mb-8 list-none gap-x-mobile-horizontal gap-y-mobile-vertical sm:gap-x-horizontal sm:gap-y-vertical">
+        class="product-list grid grid-cols-4 mb-8 list-none gap-x-mobile-horizontal gap-y-mobile-vertical sm:gap-x-horizontal sm:gap-y-vertical">
         <ShopifyProductItem v-for="product in products" :key="product.id" :product="product" />
       </ul>
     </div>
@@ -17,32 +17,37 @@
 <script setup>
 const { client } = useShopify();
 const products = ref([]);
+const collection = ref([]);
 
 const fetchProducts = async () => {
   const productsQuery = `
-      query ProductsQuery {
-      products(first: 4) {
-        nodes {
-          id
-          title
-          handle
-          images(first: 1) {
-            nodes {
-              id
-              originalSrc
-              altText
+    query productsQuery {
+      collection(handle: "all") {
+        id
+        title
+        products(first: 4) {
+          nodes {
+            id
+            title
+            handle
+            images(first: 1) {
+              nodes {
+                id
+                originalSrc
+                altText
+              }
             }
-          }
-          compareAtPriceRange {
-            maxVariantPrice {
-              amount
-              currencyCode
+            compareAtPriceRange {
+              maxVariantPrice {
+                amount
+                currencyCode
+              }
             }
-          }
-          priceRange {
-            minVariantPrice {
-              amount
-              currencyCode
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
             }
           }
         }
@@ -58,7 +63,8 @@ const fetchProducts = async () => {
 
 onMounted(async () => {
   const { data } = await fetchProducts();
-  products.value = data?.products?.nodes;
+  collection.value = data?.collection;
+  products.value = data?.collection?.products?.nodes;
 });
 
 
