@@ -19,7 +19,7 @@ module.exports = {
         './Error.{js,ts,vue}',
         './error.{js,ts,vue}',
     ],
-    
+
     theme: {
         container: {
             center: true,
@@ -113,5 +113,5 @@ module.exports = {
             },
         },
     },
-    plugins: [animate],
+    plugins: [animate, require('@tailwindcss/typography')],
 }

@@ -56,6 +56,14 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        baseUrl: '.'
+      }
+    }
+  },
+  
   devtools: { enabled: true },
 
   devServer: {

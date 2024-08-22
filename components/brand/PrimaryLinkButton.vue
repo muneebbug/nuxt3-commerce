@@ -1,6 +1,6 @@
 <template>
     <NuxtLink :to="props.to" :class="[props.tiny ? 'btn--tiny' : '']"
-        class="button bg-primary text-foreground inline-flex content-center items-center cursor-pointer break-words rounded-medium">
+        class="button bg-primary text-foreground inline-flex content-center items-center justify-center cursor-pointer break-words rounded-medium">
         <slot />
     </NuxtLink>
 </template>

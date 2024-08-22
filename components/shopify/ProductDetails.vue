@@ -1,7 +1,7 @@
 <template>
   <div class="product grid grid-cols-2">
     <div class="product-media__wrapper">
-      <div class="product-media__container relative w-full border border-border rounded-large"
+      <div class="product-media__container relative w-full border rounded-large"
         :style='`--ratio:${ratio};--preview-ratio:${ratio};`'>
         <div class="product__media media relative">
           <img :src="productPreviewImage" alt=""
@@ -61,6 +61,30 @@
 
             </div>
 
+            <div class="quantity-add__button flex items-center gap-6 my-12">
+              <div class="quantity-input">
+                <NumberField id="age" :default-value="1" :min="1" v-model="quantity">
+                  <NumberFieldContent>
+                    <NumberFieldDecrement />
+                    <NumberFieldInput />
+                    <NumberFieldIncrement />
+                  </NumberFieldContent>
+                </NumberField>
+              </div>
+
+              <BrandPrimaryButton class="flex-1" :disabled="quantity <= 0">
+                Add to Cart
+              </BrandPrimaryButton>
+
+            </div>
+
+            <div class="product-description">
+              <h3 class="h4 mb-4">Description</h3>
+              <div class="rte" v-html="product.descriptionHtml">
+
+              </div>
+            </div>
+
 
             <!-- 
             {{ selectedOptions }}
@@ -81,7 +105,15 @@
 <script setup>
 import { ref, computed } from 'vue';
 
+import {
+  NumberField,
+  NumberFieldContent,
+  NumberFieldDecrement,
+  NumberFieldIncrement,
+  NumberFieldInput,
+} from '@/components/ui/number-field'
 
+const quantity = ref(1);
 
 // Define the props
 const props = defineProps({
@@ -118,8 +150,8 @@ const selectedValues = computed(() => {
 });
 
 // Computed properties for the current variant
-const currentVariantPrice = computed(() => parseFloat(currentVariant.value?.price.amount));
-const currentVariantCompareAtPrice = computed(() => parseFloat(currentVariant.value?.compareAtPrice.amount));
+const currentVariantPrice = computed(() => parseFloat(currentVariant.value?.price?.amount || 0));
+const currentVariantCompareAtPrice = computed(() => parseFloat(currentVariant.value?.compareAtPrice?.amount || 0));
 
 
 
@@ -142,6 +174,12 @@ onMounted(() => {
 
   .media {
     padding-top: var(--ratio-percent);
+  }
+}
+
+.quantity-add__button {
+  input {
+    font-size: var(--font-body-size);
   }
 }
 </style>
