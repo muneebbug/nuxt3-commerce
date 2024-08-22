@@ -49,8 +49,8 @@
                     <HeadlessRadioGroupOption v-for="optionValue in option.optionValues" :key="optionValue.name"
                       v-slot="{ checked }" :value="optionValue.name">
                       <div
-                        class="bg-white px-[2rem] py-[1.7rem] text-center select-none cursor-pointer border border-foreground-200 rounded-small"
-                        :class="checked ? 'border-black' : ''">
+                        class="bg-white px-[2rem] py-[1.7rem] text-center select-none cursor-pointer border rounded-small"
+                        :class="checked ? 'border-black' : 'border-foreground-200'">
                         {{ optionValue.name }}
                       </div>
                     </HeadlessRadioGroupOption>
