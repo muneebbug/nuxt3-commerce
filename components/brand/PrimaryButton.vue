@@ -1,6 +1,6 @@
 <template>
   <button :class="[props.tiny ? 'btn--tiny' : '']"
-    class="button bg-primary transition-all duration-300 text-foreground inline-flex content-center items-center justify-center cursor-pointer break-words rounded-medium disabled:bg-muted disabled:cursor-not-allowed">
+    class="button bg-primary transition-all duration-300 text-button-foreground inline-flex content-center items-center justify-center cursor-pointer break-words rounded-medium disabled:bg-muted disabled:cursor-not-allowed">
     <slot />
   </button>
 </template>

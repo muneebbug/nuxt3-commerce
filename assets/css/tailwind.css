@@ -12,6 +12,8 @@
   
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
+
+    --button-foreground: 240 2% 16%;
   
     --primary: 90 87% 73%;
     --primary-foreground: 0 0% 98%;
@@ -45,9 +47,12 @@
   
     --card:240 10% 3.9%;
     --card-foreground:0 0% 98%;
+    --card-foreground-secondary:240 2% 16%;
   
     --popover:240 10% 3.9%;
     --popover-foreground:0 0% 98%;
+
+    --button-foreground: 240 2% 16%;
   
     --primary: 90 87% 73%;
     --primary-foreground:240 5.9% 10%;

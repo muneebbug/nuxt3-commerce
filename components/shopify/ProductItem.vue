@@ -17,7 +17,7 @@
         <div class="card__content mt-8">
           <div class="card__information">
             <div class="text-center">
-              <h3 class="card-heading h6">
+              <h3 class="card-heading h6 dark:text-card-foreground-secondary">
                 <NuxtLink :to="productUrl">
                   {{ product.title }}
                 </NuxtLink>
@@ -30,14 +30,16 @@
                       From ${{ smallestPrice }}
                     </span>
                     <span>
-                      <s class="price-item price-item--regular text-[1.4rem] font-semibold">
+                      <s
+                        class="price-item price-item--regular text-[1.4rem] dark:text-card-foreground-secondary font-semibold">
                         ${{ largestPrice }}
                       </s>
                     </span>
                   </div>
 
                   <div class="price__regular mt-4" v-else>
-                    <span class="price-item price-item--regular text-[2rem] font-semibold">
+                    <span
+                      class="price-item price-item--regular text-[2rem] dark:text-card-foreground-secondary font-semibold">
                       From ${{ smallestPrice }}
                     </span>
                   </div>
