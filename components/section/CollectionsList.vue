@@ -34,10 +34,10 @@ const fetchCollections = async () => {
   return { data, errors };
 }
 
-onMounted(async () => {
-  const { data } = await fetchCollections();
-  collections.value = data?.collections?.nodes;
-});
+
+const { data } = await fetchCollections();
+collections.value = data?.collections?.nodes;
+
 
 
 </script>

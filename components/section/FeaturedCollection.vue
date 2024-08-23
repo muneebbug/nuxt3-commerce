@@ -61,11 +61,11 @@ const fetchProducts = async () => {
   return { data, errors };
 };
 
-onMounted(async () => {
-  const { data } = await fetchProducts();
-  collection.value = data?.collection;
-  products.value = data?.collection?.products?.nodes;
-});
+
+const { data } = await fetchProducts();
+collection.value = data?.collection;
+products.value = data?.collection?.products?.nodes;
+
 
 
 </script>

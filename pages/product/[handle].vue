@@ -83,10 +83,10 @@ const fetchProduct = async () => {
   return { data, errors };
 }
 
-onMounted(async () => {
-  const { data } = await fetchProduct();
-  product.value = data?.product;
-});
+
+const { data } = await fetchProduct();
+product.value = data?.product;
+
 </script>
 
 <style></style>

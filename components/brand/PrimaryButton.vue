@@ -41,5 +41,6 @@ const props = defineProps({
   min-height: 4.4rem;
   min-width: 4.4rem;
   padding: 10px;
+  @apply rounded-small;
 }
 </style>

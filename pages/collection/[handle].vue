@@ -68,11 +68,11 @@ const fetchCollection = async () => {
   return { data, errors };
 }
 
-onMounted(async () => {
-  const { data } = await fetchCollection();
-  collection.value = data?.collection;
-  products.value = data?.collection?.products?.nodes;
-});
+
+const { data } = await fetchCollection();
+collection.value = data?.collection;
+products.value = data?.collection?.products?.nodes;
+
 
 </script>
 

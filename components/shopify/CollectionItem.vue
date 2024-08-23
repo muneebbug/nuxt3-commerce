@@ -17,7 +17,7 @@
             </div>
             <div class="card-collection__button">
               <BrandPrimaryLinkButton :to="collectionUrl" :tiny="true">
-                Go
+                <Icon name="material-symbols-light:arrow-outward" size="20" />
               </BrandPrimaryLinkButton>
             </div>
           </div>
