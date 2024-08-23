@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Section class="py-20 md:py-40">
+    <Section class="py-20">
       <ShopifyProductDetails :product="product" v-if="product.id" />
     </Section>
     <!-- <pre>
