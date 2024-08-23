@@ -61,6 +61,7 @@
     "ecommerce"
   ],
   "devDependencies": {
+    "@nuxt/icon": "^1.4.8",
     "@nuxtjs/tailwindcss": "^6.12.1"
   }
 }

@@ -13,8 +13,8 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     'nuxt-headlessui',
     '@nuxtjs/color-mode',
+    '@nuxt/icon',
   ],
-
   alias: {
     '@': resolve('./'),
   },

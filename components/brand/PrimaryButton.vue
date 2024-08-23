@@ -40,5 +40,6 @@ const props = defineProps({
 .btn--tiny {
   min-height: 4.4rem;
   min-width: 4.4rem;
+  padding: 10px;
 }
 </style>
