@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-    <!-- {{ product }} -->
+
   </li>
 </template>
 
@@ -67,14 +67,14 @@ const { product } = props;
 
 const productUrl = computed(() => '/product/' + product?.handle);
 
-const productPreviewImage = computed(() => product?.images?.nodes[0]?.originalSrc);
+const productPreviewImage = computed(() => product?.images[0]?.url);
 
-const ratio = computed(() => product?.images?.nodes[0]?.width / product?.images?.nodes[0]?.height);
+const ratio = computed(() => product?.images[0]?.width / product?.images[0]?.height);
 
 // smallest price of the product variants
-const smallestPrice = computed(() => product?.priceRange?.minVariantPrice?.amount);
+const smallestPrice = computed(() => parseFloat(product?.priceRange?.minVariantPrice?.amount));
 
 // largest price of the product variants
-const largestPrice = computed(() => product?.compareAtPriceRange?.maxVariantPrice?.amount);
+const largestPrice = computed(() => parseFloat(product?.compareAtPriceRange?.maxVariantPrice?.amount));
 
 </script>

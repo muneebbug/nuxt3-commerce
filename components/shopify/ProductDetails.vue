@@ -46,11 +46,11 @@
                   <HeadlessRadioGroupLabel class="block mb-4 "><span class="font-bold">{{ option.name }}</span> : {{
                     selectedOptions[option.name] }}</HeadlessRadioGroupLabel>
                   <div class="flex flex-wrap gap-x-2 gap-y-2">
-                    <HeadlessRadioGroupOption v-for="optionValue in option.optionValues" :key="optionValue.name"
-                      v-slot="{ checked }" :value="optionValue.name">
+                    <HeadlessRadioGroupOption v-for="value in option.values" :key="value" v-slot="{ checked }"
+                      :value="value">
                       <div class="px-[2rem] py-[1.7rem] text-center select-none cursor-pointer border rounded-small"
                         :class="checked ? 'border-ring' : 'border-border'">
-                        {{ optionValue.name }}
+                        {{ value }}
                       </div>
                     </HeadlessRadioGroupOption>
                   </div>
@@ -60,6 +60,13 @@
 
 
             </div>
+            <!-- {{ selectedOptions }}
+
+            {{ selectedValues }}
+
+            <pre>
+              {{ currentVariant }}
+            </pre> -->
 
             <div class="quantity-add__button flex items-center gap-6 my-12">
               <div class="quantity-input">
@@ -86,19 +93,16 @@
             </div>
 
 
-            <!-- 
-            {{ selectedOptions }}
+            <!-- <pre>{{ currentVariant }}</pre> -->
 
-            {{ selectedValues }}
-
-            <pre>
-              {{ currentVariant }}
-            </pre> -->
 
           </div>
         </div>
       </div>
     </div>
+    <!-- <pre>
+      {{ product }}
+    </pre> -->
   </div>
 </template>
 
@@ -128,8 +132,8 @@ const props = defineProps({
 const { product } = props;
 
 // Computed properties for the product details
-const productPreviewImage = computed(() => product?.images?.nodes[0]?.url);
-const ratio = computed(() => product?.images?.nodes[0]?.width / product?.images?.nodes[0]?.height);
+const productPreviewImage = computed(() => product?.images[0]?.url);
+const ratio = computed(() => product?.images[0]?.width / product?.images[0]?.height);
 
 const options = computed(() => product?.options || []);
 
@@ -137,7 +141,7 @@ const options = computed(() => product?.options || []);
 const selectedOptions = ref({});
 
 
-const currentVariant = computed(() => product?.variants?.nodes?.find((variant) => {
+const currentVariant = computed(() => product?.variants?.find((variant) => {
   return !variant.selectedOptions.map((option, index) => {
     return selectedValues.value[index] === option.value;
   })
@@ -158,11 +162,11 @@ const currentVariantCompareAtPrice = computed(() => parseFloat(currentVariant.va
 
 
 // Initialize selectedOptions with default values
-onMounted(() => {
-  options.value.forEach(option => {
-    selectedOptions.value[option.name] = option.optionValues[0]?.name || '';
-  });
+
+options.value.forEach(option => {
+  selectedOptions.value[option.name] = option.values[0] || '';
 });
+
 
 
 
