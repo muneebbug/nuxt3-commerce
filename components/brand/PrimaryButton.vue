@@ -15,7 +15,7 @@ const props = defineProps({
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .button {
   min-width: calc(12rem + 2px);
   min-height: 5.6rem;

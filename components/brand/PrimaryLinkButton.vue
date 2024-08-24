@@ -19,7 +19,7 @@ const props = defineProps({
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .button {
     min-width: calc(12rem + 2px);
     min-height: 5.6rem;
@@ -39,5 +39,7 @@ const props = defineProps({
 .btn--tiny {
     min-height: 4.4rem;
     min-width: 4.4rem;
+    padding: 10px;
+    @apply rounded-small;
 }
 </style>
