@@ -1,10 +1,10 @@
 <template>
   <div>
     <Section class="py-20">
-      <ShopifyProductDetails :product="product" v-if="product.id" />
+      <ShopifyProductDetails :product="data.product" v-if="data?.product?.id" />
     </Section>
     <!-- <pre>
-      {{ product?.variants?.nodes }}
+      {{ data?.product?.variants?.nodes }}
     </pre> -->
   </div>
 </template>
@@ -15,9 +15,7 @@ const { handle } = route.params;
 
 const { client } = useShopify();
 
-const product = ref({});
-
-const fetchProduct = async () => {
+const { data, error } = await useAsyncData('product', async () => {
   const productQuery = `
     query productQuery {
       product(handle: "${handle}") {
@@ -78,15 +76,15 @@ const fetchProduct = async () => {
 
   const { data, errors } = await client.request(productQuery);
   if (errors) {
-    console.log(errors);
+    throw new Error(errors);
   }
-  return { data, errors };
+  return data;
 }
+);
 
-
-const { data } = await fetchProduct();
-product.value = data?.product;
-
+if (error) {
+  console.log(error);
+}
 </script>
 
 <style></style>

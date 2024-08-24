@@ -1,15 +1,15 @@
 <template>
-  <Section :title="collection.title" class="py-20 md:py-40">
-    <SectionHeader :title="collection.title" />
+  <Section :title="data.collection.title" class="py-20 md:py-40">
+    <SectionHeader :title="data.collection.title" />
     <div class="section-content__wrapper">
       <ul
         class="product-list grid grid-cols-4 mb-8 list-none gap-x-mobile-horizontal gap-y-mobile-vertical sm:gap-x-horizontal sm:gap-y-vertical">
-        <ShopifyProductItem v-for="product in products" :key="product.id" :product="product" />
+        <ShopifyProductItem v-for="product in data.collection.products.nodes" :key="product.id" :product="product" />
       </ul>
     </div>
 
     <!-- <pre>
-      {{ products }}
+      {{ data.collection.products.nodes }}
     </pre> -->
   </Section>
 </template>
@@ -17,14 +17,9 @@
 <script setup>
 const route = useRoute();
 const { handle } = route.params;
-
 const { client } = useShopify();
 
-const products = ref([]);
-
-const collection = ref([]);
-
-const fetchCollection = async () => {
+const { data, error } = await useAsyncData(`collection-${handle}`, async () => {
   const collectionQuery = `
     query collectionQuery {
       collection(handle: "${handle}") {
@@ -63,17 +58,14 @@ const fetchCollection = async () => {
 
   const { data, errors } = await client.request(collectionQuery);
   if (errors) {
-    console.log(errors);
+    throw new Error(errors);
   }
-  return { data, errors };
+  return data;
+});
+
+if (error) {
+  console.log(error);
 }
-
-
-const { data } = await fetchCollection();
-collection.value = data?.collection;
-products.value = data?.collection?.products?.nodes;
-
-
 </script>
 
 <style></style>

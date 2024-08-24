@@ -4,22 +4,20 @@
     <div class="section-content__wrapper">
       <ul
         class="product-list grid grid-cols-4 mb-8 list-none gap-x-mobile-horizontal gap-y-mobile-vertical sm:gap-x-horizontal sm:gap-y-vertical">
-        <ShopifyProductItem v-for="product in products" :key="product.id" :product="product" />
+        <ShopifyProductItem v-for="product in data.collection.products.nodes" :key="product.id" :product="product" />
       </ul>
     </div>
 
     <!-- <pre>
-      {{ products }}
+      {{ data.collection.products.nodes }}
     </pre> -->
   </Section>
 </template>
 
 <script setup>
 const { client } = useShopify();
-const products = ref([]);
-const collection = ref([]);
 
-const fetchProducts = async () => {
+const { data, error } = await useAsyncData('featuredCollection', async () => {
   const productsQuery = `
     query productsQuery {
       collection(handle: "all") {
@@ -54,20 +52,17 @@ const fetchProducts = async () => {
       }
     }
   `;
+
   const { data, errors } = await client.request(productsQuery);
   if (errors) {
-    console.log(errors);
+    throw new Error(errors);
   }
-  return { data, errors };
-};
+  return data;
+});
 
-
-const { data } = await fetchProducts();
-collection.value = data?.collection;
-products.value = data?.collection?.products?.nodes;
-
-
-
+if (error) {
+  console.log(error);
+}
 </script>
 
 <style></style>

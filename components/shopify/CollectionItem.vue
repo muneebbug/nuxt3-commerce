@@ -50,8 +50,6 @@ const props = defineProps({
 
 const { collection } = props;
 
-console.log(collection);
-
 const collectionUrl = computed(() => '/collection/' + collection?.handle);
 
 </script>

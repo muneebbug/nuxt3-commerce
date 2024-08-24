@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="header__icons flex justify-self-end pr-4">
-            <NuxtLink to="/cart" class="header__icon header__icon--cart relative flex gap-4 items-center">
+            <NuxtLink to="/" class="header__icon header__icon--cart relative flex gap-4 items-center">
                 <Icon name="ph:shopping-cart-simple-light" size="30" />
                 <div class="cart-count-bubble relative flex items-center gap-2 font-semibold">
                     <span class="hidden sm:flex">$39.99</span>
