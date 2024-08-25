@@ -67,7 +67,9 @@
             <pre>
               {{ currentVariant }}
             </pre> -->
-
+            <!-- <pre>
+              {{ cart.cost }}
+            </pre> -->
             <div class="quantity-add__button flex items-center gap-6 my-12">
               <div class="quantity-input">
                 <NumberField id="age" :default-value="1" :min="1" v-model="quantity">
@@ -79,7 +81,7 @@
                 </NumberField>
               </div>
 
-              <BrandPrimaryButton class="flex-1" :disabled="quantity <= 0">
+              <BrandPrimaryButton class="flex-1" :disabled="quantity <= 0" @click="addToCart">
                 Add to Cart
               </BrandPrimaryButton>
 
@@ -92,22 +94,19 @@
               </div>
             </div>
 
-
-            <!-- <pre>{{ currentVariant }}</pre> -->
-
-
           </div>
         </div>
       </div>
     </div>
-    <!-- <pre>
-      {{ product }}
-    </pre> -->
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
+const { cart } = useCartStore();
+const { addItem } = useCart();
+
+
 
 
 import {
@@ -166,6 +165,10 @@ const currentVariantCompareAtPrice = computed(() => parseFloat(currentVariant.va
 options.value.forEach(option => {
   selectedOptions.value[option.name] = option.values[0] || '';
 });
+
+const addToCart = async () => {
+  await addItem(currentVariant.value.id, quantity.value);
+}
 
 
 

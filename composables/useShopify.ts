@@ -147,7 +147,10 @@ export function useShopify() {
       path: `/search/${collection.handle}`
     };
   };
-
+  const reshapeShopifyId = (id: string) => {
+    // extract 45743468380395 from gid://shopify/ProductVariant/45743468380395
+    return id.split('/').pop();
+  }; 
   const reshapeCollections = (collections: ShopifyCollection[]) => {
     const reshapedCollections = [];
 
@@ -433,5 +436,6 @@ export function useShopify() {
     getMenu,
     getPage,
     getPages,
+    reshapeShopifyId
   };
 }

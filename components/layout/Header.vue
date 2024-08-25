@@ -21,8 +21,8 @@
             <NuxtLink to="/" class="header__icon header__icon--cart relative flex gap-4 items-center">
                 <Icon name="ph:shopping-cart-simple-light" size="30" />
                 <div class="cart-count-bubble relative flex items-center gap-2 font-semibold">
-                    <span class="hidden sm:flex">$39.99</span>
-                    <span class="">(1)</span>
+                    <span class="hidden sm:flex">${{ totalAmount }}</span>
+                    <span class="">({{ totalQuantity }})</span>
                 </div>
             </NuxtLink>
         </div>
@@ -31,6 +31,14 @@
 
 <script lang="ts" setup>
 import { Input } from '@/components/ui/input'
+
+const cartStore = useCartStore();
+
+const totalAmount = computed(() => cartStore.cart?.cost?.totalAmount?.amount || 0.00);
+const totalQuantity = computed(() => cartStore.cart?.totalQuantity || 0);
+
+
+
 
 
 </script>
