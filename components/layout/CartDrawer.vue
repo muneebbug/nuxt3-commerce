@@ -1,14 +1,15 @@
 <template>
   <Sheet v-model:open="isOpened">
-    <SheetContent side="right" class="max-w-full w-[600px]">
-      <SheetHeader class="mb-4">
+    <SheetContent side="right" class="max-w-full w-[600px] flex flex-col p-0">
+      <SheetHeader class="mb-4 p-6 pb-0">
         <SheetTitle>
           Shopping cart
         </SheetTitle>
       </SheetHeader>
-      <div class="drawer__cart-items-wrapper" v-if="items && items.length > 0">
-        <div class="drawer__cart-items">
-          <div class="drawer__cart-item grid border rounded-large mb-8" v-for="item in items" :key="item.id">
+      <ScrollArea class="h-full px-6" v-if="items && items.length > 0">
+        <div class="drawer__cart-items-wrapper">
+
+          <div class="drawer__cart-item border rounded-large mb-8" v-for="item in items" :key="item.id">
             <div class="cart-item__media relative">
               <NuxtLink :onclick="close"
                 class="cart-item__media-link block absolute bottom-0 left-0 right-0 top-0 w-full h-full"
@@ -52,8 +53,9 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="cart-empty" v-else>
+      </ScrollArea>
+      <!-- Empty Cart -->
+      <div class="cart-empty px-6" v-else>
         <div class="cart-empty__wrapper border rounded-large p-12 flex flex-col items-center justify-center">
           <div class="empty-icon mb-2">
             <Icon name="ph:shopping-cart-simple-light" size="60" />
@@ -70,7 +72,16 @@
           </div>
         </div>
       </div>
+
+      <div class="cart-footer flex justify-center items-center p-6 shadow shadow-slate-300">
+        <BrandPrimaryButton class="w-full" @click="redirectToCheckout">
+          Checkout
+        </BrandPrimaryButton>
+      </div>
+
+
     </SheetContent>
+
   </Sheet>
 </template>
 
@@ -92,13 +103,14 @@ import {
 } from '@/components/ui/number-field'
 
 import type { Cart } from '~/lib/shopify/types';
+import ScrollArea from '../ui/scroll-area/ScrollArea.vue';
 
 const { isOpened } = useCartDrawer()
 const cart = computed<Cart | undefined>(() => useCartStore().cart);
 
 const items = computed(() => useCartStore().cart?.lines)
 const { close } = useCartDrawer();
-const { removeItem, updateItemQuantity } = useCart();
+const { removeItem, updateItemQuantity, redirectToCheckout } = useCart();
 
 const nuxtApp = useNuxtApp();
 
@@ -117,25 +129,46 @@ nuxtApp.hook('page:start', () => {
 
 <style lang="scss">
 .drawer__cart-item {
-
+  display: grid;
   grid-template-columns: 10rem 1fr 13rem;
   grid-template-areas:
-    "media item-details quantity"
-    "error error error";
+    "media item-details quantity";
   column-gap: 2rem;
   padding: 3rem;
+
+  @media screen and (max-width: 639px) {
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .cart-item__media {
   grid-area: media;
+
+  @media screen and (max-width: 639px) {
+    width: 100%;
+    max-width: 85px;
+    margin-bottom: 1rem;
+  }
 }
 
 .cart-item__details {
   width: auto;
-  grid-area: item-details;
+  grid-area: 'item-details';
+
+  @media screen and (max-width: 639px) {
+    width: calc(100% - 105px);
+    min-width: calc(100% - 105px);
+  }
 }
 
 .cart-item__quantity {
   grid-area: quantity;
+
+  @media screen and (max-width: 639px) {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 </style>

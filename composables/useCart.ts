@@ -119,7 +119,7 @@ export function useCart() {
 
     if (!cart) return 'Error Fetching Cart';
 
-    navigateTo(cart.checkoutUrl);
+    navigateTo(cart.checkoutUrl, {external: true});
   }
 
   async function createCartAndSetCookie() {
