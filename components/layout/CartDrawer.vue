@@ -73,7 +73,8 @@
         </div>
       </div>
 
-      <div class="cart-footer flex justify-center items-center p-6 shadow shadow-slate-300">
+      <div v-if="items && items.length > 0"
+        class="cart-footer flex justify-center items-center p-6 shadow shadow-slate-300">
         <BrandPrimaryButton class="w-full" @click="redirectToCheckout">
           Checkout
         </BrandPrimaryButton>
