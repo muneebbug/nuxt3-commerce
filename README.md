@@ -82,7 +82,6 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
   ```
 
 ## To-Do
-## To Dos
 
 - [X] Nuxt 3
 - [X] Shopify Storefront API Client
@@ -96,9 +95,9 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
 - [ ] 🌙 Theme Switcher (light, dark, system)
 - [ ] 🇮🇩 Language Switcher
 - [X] Pages
-  - [ ] Home
-  - [ ] Collection
-  - [ ] Product
+  - [X] Home
+  - [X] Collection
+  - [X] Product
   - [ ] Cart
   - [ ] Blog
     - [ ] Article
@@ -109,12 +108,12 @@ A Nuxt 3 starter template for creating a custom frontend with Shopify's Storefro
         - [X] Product List
         - [X] Product Card
         - [ ] Featured Product
-        - [ ] Product Details
+        - [X] Product Details
     - [X] General Components
         - [X] Button
         - [ ] Form
     - [ ] Modal
-    - [ ] Drawers
+    - [X] Drawers
     - [ ] Tabs
 
 
