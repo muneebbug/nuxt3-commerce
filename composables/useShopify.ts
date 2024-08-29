@@ -320,6 +320,7 @@ export function useShopify() {
     return reshapeProducts(removeEdgesAndNodes(res.body.data.collection.products));
   }
 
+
   async function getCollections(): Promise<Collection[]> {
     const res = await shopifyFetch<ShopifyCollectionsOperation>({
       query: getCollectionsQuery,

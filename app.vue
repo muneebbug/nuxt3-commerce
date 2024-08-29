@@ -6,19 +6,44 @@
     </NuxtLayout>
   </div>
 </template>
-<script setup>
-import { provideUseId } from '@headlessui/vue'
-provideUseId(() => useId())
-</script>
-<style>
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.4s;
-}
+<script setup lang="ts">
+// @ts-ignore
+import { provideUseId } from '@headlessui/vue';
 
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
-}
-</style>
+// import type { Cart } from '@/lib/shopify/types';
+provideUseId(() => useId());
+
+const { createCartAndSetCookie, initializeCart } = useCart();
+const { getCart } = useShopify();
+const cookie = useCookie('cartId');
+
+// Define the fetchCart function
+const fetchCart = async () => {
+  if (!cookie.value) {
+    try {
+      const cart = await createCartAndSetCookie();
+
+      if (cart) {
+        initializeCart(cart);
+      }
+    } catch (error) {
+      console.error('Failed to create cart and set cookie:', error);
+    }
+  } else {
+    try {
+      const cart = await getCart(cookie.value);
+      initializeCart(cart);
+    } catch (error) {
+      console.error('Failed to get cart:', error);
+    }
+  }
+};
+
+
+
+onServerPrefetch(async () => {
+  await fetchCart();
+});
+
+
+</script>

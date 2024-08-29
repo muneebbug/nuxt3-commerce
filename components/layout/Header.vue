@@ -18,13 +18,13 @@
             </div>
         </div>
         <div class="header__icons flex justify-self-end pr-4">
-            <NuxtLink to="/" class="header__icon header__icon--cart relative flex gap-4 items-center">
+            <button @click="open" class="header__icon header__icon--cart relative flex gap-4 items-center">
                 <Icon name="ph:shopping-cart-simple-light" size="30" />
                 <div class="cart-count-bubble relative flex items-center gap-2 font-semibold">
                     <span class="hidden sm:flex">${{ totalAmount }}</span>
                     <span class="">({{ totalQuantity }})</span>
                 </div>
-            </NuxtLink>
+            </button>
         </div>
     </header>
 </template>
@@ -37,7 +37,7 @@ const cartStore = useCartStore();
 const totalAmount = computed(() => cartStore.cart?.cost?.totalAmount?.amount || 0.00);
 const totalQuantity = computed(() => cartStore.cart?.totalQuantity || 0);
 
-
+const { open, close, isOpened } = useCartDrawer();
 
 
 

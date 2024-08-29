@@ -6,13 +6,14 @@ import type { Cart } from '@/lib/shopify/types';
 export const useCartStore = defineStore('cart', {
   state: () => {
     return {
-      cart: null as Cart | null,
+      cart: undefined as Cart | undefined,
       isLoading: false as boolean,
     };
   },
   actions: {
-    setCart(cart: Cart) {
-      console.log("Setting cart");
+
+
+    setCart(cart: Cart | undefined) {
       this.cart = cart;
     },
     setLoading(isLoading : boolean) {
