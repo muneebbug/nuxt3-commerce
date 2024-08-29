@@ -6,7 +6,7 @@
           Shopping cart
         </SheetTitle>
       </SheetHeader>
-      <div class="drawer__cart-items-wrapper">
+      <div class="drawer__cart-items-wrapper" v-if="items && items.length > 0">
         <div class="drawer__cart-items">
           <div class="drawer__cart-item grid border rounded-large mb-8" v-for="item in items" :key="item.id">
             <div class="cart-item__media relative">
@@ -50,6 +50,23 @@
                 Remove
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-empty" v-else>
+        <div class="cart-empty__wrapper border rounded-large p-12 flex flex-col items-center justify-center">
+          <div class="empty-icon mb-4">
+            <Icon name="ph:shopping-cart-simple-light" size="60" />
+          </div>
+          <div class="empty-text mb-4">
+            <h1 class="h3">
+              Your cart is empty
+            </h1>
+          </div>
+          <div class="empty-button">
+            <BrandPrimaryLinkButton to="/">
+              Continue Shopping
+            </BrandPrimaryLinkButton>
           </div>
         </div>
       </div>
@@ -108,8 +125,6 @@ nuxtApp.hook('page:start', () => {
   column-gap: 2rem;
   padding: 3rem;
 }
-
-.cart-item__link {}
 
 .cart-item__media {
   grid-area: media;
