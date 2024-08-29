@@ -21,6 +21,12 @@ export function useCart() {
     try {
       const cart = await addToCart(cartId, [{ merchandiseId: selectedVariantId, quantity }]);
       cartStore.setCart(cart);
+
+      const { isOpened, open } = useCartDrawer();
+      
+      if (!isOpened.value === true) {
+        open();
+      }
     }
     catch (e) {
       console.log(e);

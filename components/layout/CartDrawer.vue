@@ -55,11 +55,11 @@
       </div>
       <div class="cart-empty" v-else>
         <div class="cart-empty__wrapper border rounded-large p-12 flex flex-col items-center justify-center">
-          <div class="empty-icon mb-4">
+          <div class="empty-icon mb-2">
             <Icon name="ph:shopping-cart-simple-light" size="60" />
           </div>
-          <div class="empty-text mb-4">
-            <h1 class="h3">
+          <div class="empty-text mb-8">
+            <h1 class="h4">
               Your cart is empty
             </h1>
           </div>
