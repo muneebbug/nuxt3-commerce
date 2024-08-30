@@ -2,7 +2,7 @@
   <button :class="[props.tiny ? 'btn--tiny' : '']"
     class="button bg-primary transition-all duration-300 text-button-foreground inline-flex content-center items-center justify-center cursor-pointer break-words rounded-medium disabled:bg-muted disabled:cursor-not-allowed">
 
-    <Icon v-if="props.loading" name="local:button-loader" class="w-[18px]" />
+    <Icon v-if="props.loading" name="local:button-loader" size="24" class="w-[18px]" />
     <slot v-else />
   </button>
 </template>

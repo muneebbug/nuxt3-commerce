@@ -9,7 +9,13 @@
       <ScrollArea class="h-full px-6" v-if="items && items.length > 0">
         <div class="drawer__cart-items-wrapper">
 
-          <div class="drawer__cart-item border rounded-large mb-8" v-for="item in items" :key="item.id">
+          <div class="drawer__cart-item relative border rounded-large mb-8 overflow-hidden" v-for="item in items"
+            :key="item.id">
+            <div v-if="loadingStates[item.merchandise.id]"
+              class="loading-spinner absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center bg-white z-10 opacity-90">
+              <Icon name="local:button-loader" size="24" class="w-[18px]" />
+            </div>
+
             <div class="cart-item__media relative">
               <NuxtLink :onclick="close"
                 class="cart-item__media-link block absolute bottom-0 left-0 right-0 top-0 w-full h-full"
@@ -46,7 +52,7 @@
                 </NumberField>
               </div>
 
-              <button @click="removeItem(null, item?.merchandise?.id)"
+              <button @click="removeItemLocal(null, item?.merchandise?.id)"
                 class="text-center w-full font-bold underline text-destructive">
                 Remove
               </button>
@@ -113,15 +119,24 @@ const items = computed(() => useCartStore().cart?.lines)
 const { close } = useCartDrawer();
 const { removeItem, updateItemQuantity, redirectToCheckout } = useCart();
 
+const loadingStates = ref<Record<string, boolean>>({});
+
 const nuxtApp = useNuxtApp();
 
 const updateItemLocal = async (payload: {
   merchandiseId: string;
   quantity: number;
 }) => {
-  console.log(payload.quantity)
+  loadingStates.value[payload.merchandiseId] = true;
   await updateItemQuantity(null, payload);
+  loadingStates.value[payload.merchandiseId] = false;
 }
+
+const removeItemLocal = async (prevState: any, itemId: string) => {
+  loadingStates.value[itemId] = true;
+  await removeItem(null, itemId);
+  loadingStates.value[itemId] = false;
+};
 
 nuxtApp.hook('page:start', () => {
   close();

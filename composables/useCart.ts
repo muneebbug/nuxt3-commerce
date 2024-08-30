@@ -35,7 +35,7 @@ export function useCart() {
   };
 
 
-  async function removeItem(prevState: any,merchandiseId: string) {
+  async function removeItem(prevState: any, merchandiseId: string) {
     console.log('removeItem', merchandiseId);
   let cartId = useCookie('cartId')?.value;
 
