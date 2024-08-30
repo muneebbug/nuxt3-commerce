@@ -81,7 +81,7 @@
                 </NumberField>
               </div>
 
-              <BrandPrimaryButton class="flex-1" :disabled="quantity <= 0" @click="addToCart">
+              <BrandPrimaryButton :loading="loading" class="flex-1" :disabled="quantity <= 0" @click="addToCart">
                 Add to Cart
               </BrandPrimaryButton>
 
@@ -105,6 +105,8 @@
 import { ref, computed } from 'vue';
 const { cart } = useCartStore();
 const { addItem } = useCart();
+
+const loading = ref(false);
 
 
 
@@ -167,7 +169,16 @@ options.value.forEach(option => {
 });
 
 const addToCart = async () => {
-  await addItem(currentVariant.value.id, quantity.value);
+  loading.value = true;
+  try {
+    await addItem(currentVariant.value.id, quantity.value);
+    loading.value = false;
+  }
+  catch (error) {
+    console.error('Error adding item to cart:', error);
+    loading.value = false;
+    return;
+  }
 }
 
 

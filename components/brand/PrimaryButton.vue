@@ -1,13 +1,19 @@
 <template>
   <button :class="[props.tiny ? 'btn--tiny' : '']"
     class="button bg-primary transition-all duration-300 text-button-foreground inline-flex content-center items-center justify-center cursor-pointer break-words rounded-medium disabled:bg-muted disabled:cursor-not-allowed">
-    <slot />
+
+    <Icon v-if="props.loading" name="local:button-loader" class="w-[18px]" />
+    <slot v-else />
   </button>
 </template>
 
 <script setup>
 const props = defineProps({
   tiny: {
+    type: Boolean,
+    default: false,
+  },
+  loading: {
     type: Boolean,
     default: false,
   }

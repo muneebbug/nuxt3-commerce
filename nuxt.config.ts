@@ -22,6 +22,16 @@ export default defineNuxtConfig({
     '@': resolve('./'),
   },
 
+  // icon
+  icon: {
+    customCollections: [
+      {
+        prefix: 'local',
+        dir: './assets/icons',
+      }
+    ]
+  },
+
   // shadcn-nuxt
 
   shadcn: {
