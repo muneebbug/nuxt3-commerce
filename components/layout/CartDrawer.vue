@@ -53,7 +53,7 @@
               </div>
 
               <button @click="removeItemLocal(null, item?.merchandise?.id)"
-                class="text-center w-full font-bold underline text-destructive">
+                class="text-center font-bold underline text-destructive">
                 Remove
               </button>
             </div>

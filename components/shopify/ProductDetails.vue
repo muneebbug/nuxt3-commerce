@@ -1,15 +1,7 @@
 <template>
   <div class="product grid grid-cols-2">
-    <div class="product-media__wrapper">
-      <div class="product-media__container relative w-full border rounded-large"
-        :style='`--ratio:${ratio};--preview-ratio:${ratio};`'>
-        <div class="product__media media relative">
-          <img :src="productPreviewImage" alt=""
-            class="block max-w-full absolute top-0 left-0 h-full w-full overflow-hidden object-cover object-center rounded-large">
-        </div>
-      </div>
-    </div>
-    <div class="product-info__wrapper pl-20">
+    <ProductMediaGallery :product="product" />
+    <div class="product-info__wrapper md:pl-20">
       <div class="product-info">
         <p class="uppercase">
           {{ product.vendor }}
@@ -118,6 +110,7 @@ import {
   NumberFieldIncrement,
   NumberFieldInput,
 } from '@/components/ui/number-field'
+import ProductMediaGallery from './ProductMediaGallery.vue';
 
 const quantity = ref(1);
 
@@ -132,9 +125,6 @@ const props = defineProps({
 // Destructure the product from props
 const { product } = props;
 
-// Computed properties for the product details
-const productPreviewImage = computed(() => product?.images[0]?.url);
-const ratio = computed(() => product?.images[0]?.width / product?.images[0]?.height);
 
 const options = computed(() => product?.options || []);
 
@@ -193,15 +183,6 @@ const addToCart = async () => {
 
   @media screen and (min-width: 768px) {
     grid-template-columns: 55% 45%;
-  }
-}
-
-.product-media__container {
-  --aspect-ratio: var(--preview-ratio);
-  --ratio-percent: calc(1 / var(--aspect-ratio) * 100%);
-
-  .media {
-    padding-top: var(--ratio-percent);
   }
 }
 

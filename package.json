@@ -32,6 +32,7 @@
     "@vueuse/nuxt": "^11.0.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel-vue": "^8.2.0",
     "lucide-vue-next": "^0.429.0",
     "nuxt": "^3.12.4",
     "nuxt-headlessui": "^1.2.0",
