@@ -34,7 +34,7 @@ import { Input } from '@/components/ui/input'
 
 const cartStore = useCartStore();
 
-const totalAmount = computed(() => cartStore.cart?.cost?.totalAmount?.amount || 0.00);
+const totalAmount = computed(() => cartStore.cart?.cost?.totalAmount?.amount || 0);
 const totalQuantity = computed(() => cartStore.cart?.totalQuantity || 0);
 
 const { open, close, isOpened } = useCartDrawer();

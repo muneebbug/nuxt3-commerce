@@ -121,12 +121,16 @@ export function useCart() {
 
     navigateTo(cart.checkoutUrl, {external: true});
   }
-
+/*
+this function should not be called. its useless at the time as it causes ssr issues.
+if i call this function before page load with await or onServerPrefetch, it causes ssr issues
+as the useCookie() is not available outside nuxt context 
+therefore i am opting for a different solution but keeping this function here for reference
+*/
   async function createCartAndSetCookie() {
     let cart = await createCart();
     const cookie = useCookie('cartId');
     cookie.value = cart.id!
-
     return cart;
   } 
 
