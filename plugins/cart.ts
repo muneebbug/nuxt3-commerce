@@ -4,8 +4,6 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     const { initializeCart } = useCart();
     const { getCart, createCart } = useShopify();
     const cookie = useCookie('cartId');
-
-
         if (!cookie.value) {
             try {
                 const cart = await createCart();
@@ -13,8 +11,6 @@ export default defineNuxtPlugin(async (nuxtApp) => {
                 if (cart) {
                     initializeCart(cart);
                 }
-
-
             } catch (error) {
                 console.error('Failed to create cart and set cookie:', error);
             }
@@ -22,12 +18,11 @@ export default defineNuxtPlugin(async (nuxtApp) => {
         else {
             try {
                 const cart = await getCart(cookie.value);
-
                 if (cart) {
                     initializeCart(cart);
                 }
             } catch (error) {
                 console.error('Failed to get cart:', error);
-            }   
+            }
         }
 });
