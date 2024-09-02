@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-const { client, getCollections } = useShopify();
+const { getCollections } = useShopify();
 
 const collections = await getCollections();
 

@@ -260,6 +260,43 @@ export type ShopifyProductRecommendationsOperation = {
   };
 };
 
+export type TSearchResultProduct = {
+  id: string;
+  handle: string;
+  title: string;
+  featuredImage: {
+    url: string;
+  };
+}
+
+export type TSearchResultCollection = {
+  id: string;
+  title: string;
+  handle: string;
+}
+
+export type TSearchResultPage = {
+  id: string;
+  title: string;
+}
+export type SearchResults = {
+  products: TSearchResultProduct[];
+  collections: TSearchResultCollection[];
+  pages: TSearchResultPage[];
+  totalCount: number;
+};
+
+export type predictiveSearchOperation = {
+  data: {
+    predictiveSearch: SearchResults;
+  };
+  variables: {
+    query: string
+  };
+}
+
+
+
 export type ShopifyProductsOperation = {
   data: {
     products: Connection<ShopifyProduct>;

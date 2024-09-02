@@ -1,5 +1,5 @@
 <template>
-    <header class="header page-width">
+    <header ref="header" class="header page-width">
         <BrandPrimaryButton :tiny=true class="navigation-hub-btn">
             <Icon name="ic:baseline-menu" size="30" />
         </BrandPrimaryButton>
@@ -8,15 +8,9 @@
                 <img src="/fuel-logo.png" alt="logo" class="header__logo max-w-[90px] lg:max-w-full" width="100">
             </div>
         </NuxtLink>
-        <div class="inline-search-form ml-12 hidden lg:block">
-            <div class="field flex relative w-full">
-                <Input type="text" id="inline-search" placeholder="Search" class="search__input field__input" />
-                <button class="absolute right-6 inset-y-0 flex items-center justify-end px-2">
-                    <Icon name="ph:magnifying-glass" size="30" class="size-8 text-current" />
-                </button>
 
-            </div>
-        </div>
+        <LayoutHeaderSearch :searchPopoverMaxHeight="searchPopoverMaxHeight" />
+
         <div class="header__icons flex justify-self-end pr-4">
             <button @click="open" class="header__icon header__icon--cart relative flex gap-4 items-center">
                 <Icon name="ph:shopping-cart-simple-light" size="30" />
@@ -30,7 +24,6 @@
 </template>
 
 <script lang="ts" setup>
-import { Input } from '@/components/ui/input'
 
 const cartStore = useCartStore();
 
@@ -39,6 +32,16 @@ const totalQuantity = computed(() => cartStore.cart?.totalQuantity || 0);
 
 const { open, close, isOpened } = useCartDrawer();
 
+
+// logic to calculate popover height for search
+const { height: windowHeight } = useWindowSize();
+const header = ref<HTMLElement | null>(null);
+// get header tag height
+const headerHeight = computed(() => header.value?.getBoundingClientRect().bottom || 0);
+
+const searchPopoverMaxHeight = computed(() => {
+    return windowHeight.value - headerHeight.value;
+})
 
 
 </script>
@@ -92,14 +95,6 @@ const { open, close, isOpened } = useCartDrawer();
     }
 }
 
-.search__input {
-    min-height: 2px;
-    height: 5.6rem;
-    padding: 1.5rem 2rem;
-    padding-right: 9.8rem;
-    margin: 1px;
-    min-width: calc(7rem + 2px);
-}
 
 .header__icons {
     grid-area: icons;

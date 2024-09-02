@@ -23,6 +23,7 @@ import {
   getProductRecommendationsQuery,
   getProductsQuery
 } from '@/lib/shopify/queries/product';
+import { predictiveSearchQuery } from '@/lib/shopify/queries/search';
 import type {
   Cart,
   Collection,
@@ -45,6 +46,8 @@ import type {
   ShopifyProduct,
   ShopifyProductOperation,
   ShopifyProductRecommendationsOperation,
+  SearchResults,
+  predictiveSearchOperation,
   ShopifyProductsOperation,
   ShopifyRemoveFromCartOperation,
   ShopifyUpdateCartOperation
@@ -363,6 +366,27 @@ export function useShopify() {
     return reshapeProducts(res.body.data.productRecommendations || []);
   }
 
+async function performPredictiveSearch({
+  query
+}: {
+  query: string
+}): Promise<SearchResults> {
+  const res = await shopifyFetch<predictiveSearchOperation>({
+    query: predictiveSearchQuery,
+    variables: {
+      query
+    },
+  });
+
+  const results = res.body.data.predictiveSearch;
+
+  return {
+    ...results,
+    totalCount: results.products.length + results.collections.length + results.pages.length
+  };
+}
+
+
   async function getProducts({
     query,
     reverse,
@@ -421,6 +445,7 @@ export function useShopify() {
   return removeEdgesAndNodes(res.body.data.pages);
 }
 
+
   return {
     client,
     createCart,
@@ -433,6 +458,7 @@ export function useShopify() {
     getCollections,
     getProduct,
     getProductRecommendations,
+    performPredictiveSearch,
     getProducts,
     getMenu,
     getPage,

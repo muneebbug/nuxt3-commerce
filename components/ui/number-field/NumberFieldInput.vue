@@ -10,7 +10,7 @@ const props = defineProps<{
 
 <template>
   <NumberFieldInput data-slot="input"
-    :class="cn('flex w-full font-medium min-w-16 py-0 px-2 rounded-medium border border-input bg-background text-center ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50', props.class)" />
+    :class="cn('flex w-full font-medium min-w-16 py-0 px-2 rounded-medium border border-border border-opacity-20 bg-background text-center ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50', props.class)" />
 </template>
 
 <style scoped lang="scss">

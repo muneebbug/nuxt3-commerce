@@ -9,8 +9,9 @@
       <ScrollArea class="h-full px-6" v-if="items && items.length > 0">
         <div class="drawer__cart-items-wrapper">
 
-          <div class="drawer__cart-item relative border rounded-large mb-8 overflow-hidden" v-for="item in items"
-            :key="item.id">
+          <div
+            class="drawer__cart-item relative border border-border border-opacity-20 rounded-large mb-8 overflow-hidden"
+            v-for="item in items" :key="item.id">
             <div v-if="loadingStates[item.merchandise.id]"
               class="loading-spinner absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center bg-white z-10 opacity-90">
               <Icon name="local:button-loader" size="24" class="w-[18px]" />
@@ -62,7 +63,8 @@
       </ScrollArea>
       <!-- Empty Cart -->
       <div class="cart-empty px-6" v-else>
-        <div class="cart-empty__wrapper border rounded-large p-12 flex flex-col items-center justify-center">
+        <div
+          class="cart-empty__wrapper border border-border border-opacity-20 rounded-large p-12 flex flex-col items-center justify-center">
           <div class="empty-icon mb-2">
             <Icon name="ph:shopping-cart-simple-light" size="60" />
           </div>

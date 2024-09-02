@@ -40,7 +40,8 @@
                   <div class="flex flex-wrap gap-x-2 gap-y-2">
                     <HeadlessRadioGroupOption v-for="value in option.values" :key="value" v-slot="{ checked }"
                       :value="value">
-                      <div class="px-[2rem] py-[1.7rem] text-center select-none cursor-pointer border rounded-small"
+                      <div
+                        class="px-[2rem] py-[1.7rem] text-center select-none cursor-pointer border border-opacity-20 rounded-small"
                         :class="checked ? 'border-ring' : 'border-border'">
                         {{ value }}
                       </div>

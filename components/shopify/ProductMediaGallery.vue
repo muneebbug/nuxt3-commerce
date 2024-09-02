@@ -1,9 +1,10 @@
 <template>
-  <div class="product-media__wrapper mb-10 md:mb-0">
+  <div class="product-media__wrapper mb-10 md:mb-0 ">
     <Carousel>
       <CarouselContent>
         <CarouselItem v-for="image in product?.images" :key="image.id">
-          <img :src="image.url" alt="" class="w-full h-full object-cover object-center rounded-large" />
+          <img :src="image.url" alt=""
+            class="w-full h-full object-cover object-center rounded-large border border-border border-opacity-20" />
         </CarouselItem>
       </CarouselContent>
       <CarouselPrevious />
