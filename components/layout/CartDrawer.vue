@@ -82,7 +82,16 @@
       </div>
 
       <div v-if="items && items.length > 0"
-        class="cart-footer flex justify-center items-center p-6 shadow shadow-slate-300">
+        class="cart-footer flex flex-col gap-6 justify-center items-center p-6 shadow shadow-slate-300">
+        <div
+          class="cart_totals_box p-6 w-full rounded-medium border border-border border-opacity-20 text-white bg-foreground">
+          <div class="totals flex w-full justify-between">
+            <h2 class="totals__total h3">Total</h2>
+            <p class="totals__total-value h3">
+              ${{ cart?.cost?.totalAmount?.amount }}
+            </p>
+          </div>
+        </div>
         <BrandPrimaryButton class="w-full" @click="redirectToCheckout">
           Checkout
         </BrandPrimaryButton>
