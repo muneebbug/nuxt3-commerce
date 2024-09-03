@@ -32,13 +32,6 @@ export default defineNuxtConfig({
     ]
   },
 
-  // shadcn-nuxt
-
-  shadcn: {
-    prefix: 'UI',
-    componentDir: './components/ui'
-  },
-
   googleFonts: {
     families: {
       "DM Sans": ['400', '500', '600', '700', '800', '900'],
@@ -53,7 +46,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: [resolve('./stores'), '~/stores'],
   },
-  
+
   // module::pinia
   pinia: {
     storesDirs: ['~/stores/**', '#/stores/**', '@/stores/**'],
@@ -63,12 +56,12 @@ export default defineNuxtConfig({
   headlessui: {
     prefix: 'Headless',
   },
-  
+
   // module::color-mode
   colorMode: {
     classSuffix: '',
   },
-  
+
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -76,7 +69,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+
   devtools: { enabled: true },
 
   devServer: {
