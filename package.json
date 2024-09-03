@@ -64,6 +64,7 @@
   ],
   "devDependencies": {
     "@nuxt/icon": "^1.4.8",
-    "@nuxtjs/tailwindcss": "^6.12.1"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "typescript": "^5.5.4"
   }
 }
