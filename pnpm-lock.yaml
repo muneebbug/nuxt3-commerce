@@ -26,9 +26,6 @@ importers:
       '@pinia/nuxt':
         specifier: ^0.5.3
         version: 0.5.4(magicast@0.3.5)(rollup@4.21.2)(typescript@5.5.4)(vue@3.5.0(typescript@5.5.4))
-      '@shopify/storefront-api-client':
-        specifier: ^1.0.1
-        version: 1.0.1
       '@tailwindcss/typography':
         specifier: ^0.5.14
         version: 0.5.15(tailwindcss@3.4.10)
@@ -1183,12 +1180,6 @@ packages:
     resolution: {integrity: sha512-6UUxd0+SKomjdzuAcp+HAmxw1FlGBnl1v2yEPSabtx4lBfdXHDVsW7+lQkgz9cNFJGY3AWR7+V8P5BqkD9L9nA==}
     cpu: [x64]
     os: [win32]
-
-  '@shopify/graphql-client@1.1.0':
-    resolution: {integrity: sha512-ZHEqNa5mTKa/dB6XH5F0Zdt2SAGOc9evRhJLoaI/DEftvuEaqZo4CRa4THONCZFwwgClW3WaoZBlqggILfYBuw==}
-
-  '@shopify/storefront-api-client@1.0.1':
-    resolution: {integrity: sha512-cz9gp7aITrbNyTO8ULOHFQA5CuBtRqkc23RJW8iX2FticneGgksUg4Uwj5yQ+6u5BMWoEcLn9+B6TS799YOTcA==}
 
   '@sindresorhus/is@5.6.0':
     resolution: {integrity: sha512-TV7t8GKYaJWsn00tFDqBw8+Uqmr8A0fRU1tvTQhyZzGv0sJCGRQL3JGMI3ucuKo3XIZdUP+Lx7/gh2t3lewy7g==}
@@ -5639,12 +5630,6 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.21.2':
     optional: true
-
-  '@shopify/graphql-client@1.1.0': {}
-
-  '@shopify/storefront-api-client@1.0.1':
-    dependencies:
-      '@shopify/graphql-client': 1.1.0
 
   '@sindresorhus/is@5.6.0': {}
 

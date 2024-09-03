@@ -54,8 +54,6 @@ import type {
 } from '@/lib/shopify/types';
 
 export function useShopify() {
-  // $shopifyClient as any type
-  const client = useNuxtApp().$shopifyClient;
   const { storeDomain, publicAccessToken } = useRuntimeConfig().public;
 
   const domain = storeDomain as string
@@ -438,7 +436,6 @@ async function performPredictiveSearch({
 
 
   return {
-    client,
     createCart,
     addToCart,
     removeFromCart,
