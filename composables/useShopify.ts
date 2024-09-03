@@ -57,7 +57,7 @@ export function useShopify() {
   // $shopifyClient as any type
   const client = useNuxtApp().$shopifyClient;
   const { storeDomain, publicAccessToken } = useRuntimeConfig().public;
-  
+
   const domain = storeDomain as string
     ? ensureStartsWith(storeDomain as string, 'https://')
     : '';
@@ -67,13 +67,11 @@ export function useShopify() {
   type ExtractVariables<T> = T extends { variables: object } ? T['variables'] : never;
 
   async function shopifyFetch<T>({
-    cache = 'force-cache',
     headers,
     query,
     tags,
     variables
   }: {
-    cache?: RequestCache;
     headers?: HeadersInit;
     query: string;
     tags?: string[];
@@ -91,7 +89,6 @@ export function useShopify() {
           ...(query && { query }),
           ...(variables && { variables })
         }),
-        cache,
         ...(tags && { next: { tags } })
       });
 
@@ -153,7 +150,7 @@ export function useShopify() {
   const reshapeShopifyId = (id: string) => {
     // extract 45743468380395 from gid://shopify/ProductVariant/45743468380395
     return id.split('/').pop();
-  }; 
+  };
   const reshapeCollections = (collections: ShopifyCollection[]) => {
     const reshapedCollections = [];
 
@@ -215,7 +212,6 @@ export function useShopify() {
   async function createCart(): Promise<Cart> {
     const res = await shopifyFetch<ShopifyCreateCartOperation>({
       query: createCartMutation,
-      cache: 'no-store'
     });
 
     return reshapeCart(res.body.data.cartCreate.cart);
@@ -230,8 +226,7 @@ export function useShopify() {
       variables: {
         cartId,
         lines
-      },
-      cache: 'no-store'
+      }
     });
     return reshapeCart(res.body.data.cartLinesAdd.cart);
   }
@@ -242,8 +237,7 @@ export function useShopify() {
       variables: {
         cartId,
         lineIds
-      },
-      cache: 'no-store'
+      }
     });
 
     return reshapeCart(res.body.data.cartLinesRemove.cart);
@@ -258,8 +252,7 @@ export function useShopify() {
       variables: {
         cartId,
         lines
-      },
-      cache: 'no-store'
+      }
     });
 
     return reshapeCart(res.body.data.cartLinesUpdate.cart);
@@ -429,7 +422,6 @@ async function performPredictiveSearch({
   async function getPage(handle: string): Promise<Page> {
   const res = await shopifyFetch<ShopifyPageOperation>({
     query: getPageQuery,
-    cache: 'no-store',
     variables: { handle }
   });
 
@@ -438,8 +430,7 @@ async function performPredictiveSearch({
 
   async function getPages(): Promise<Page[]> {
   const res = await shopifyFetch<ShopifyPagesOperation>({
-    query: getPagesQuery,
-    cache: 'no-store'
+    query: getPagesQuery
   });
 
   return removeEdgesAndNodes(res.body.data.pages);
