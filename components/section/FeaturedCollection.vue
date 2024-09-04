@@ -7,10 +7,6 @@
         <ShopifyProductItem v-for="product in products.slice(0, 4)" :key="product.id" :product="product" />
       </ul>
     </div>
-
-    <!-- <pre>
-      {{ products }}
-    </pre> -->
   </Section>
 </template>
 

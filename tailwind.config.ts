@@ -27,8 +27,12 @@ module.exports = {
             screens: {
                 "2xl": "1400px",
             },
-        },
-        extend: {
+      },
+
+      extend: {
+          fontSize: {
+            "base-body": '1.6rem',
+          },
             colors: {
                 border: "hsl(var(--border) / var(--tw-border-opacity))",
                 input: "hsl(var(--input))",
@@ -82,7 +86,7 @@ module.exports = {
                 sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
                 body: ['DM Sans', ...defaultTheme.fontFamily.sans],
                 heading: ['Oswald', ...defaultTheme.fontFamily.sans],
-            },
+          },
 
             spacing: {
                 'horizontal': 'var(--grid-desktop-horizontal-spacing)',
@@ -115,6 +119,7 @@ module.exports = {
                 "collapsible-down": "collapsible-down 0.2s ease-in-out",
                 "collapsible-up": "collapsible-up 0.2s ease-in-out",
             },
+
         },
     },
     plugins: [animate, require('@tailwindcss/typography')],

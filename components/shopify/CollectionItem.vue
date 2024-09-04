@@ -37,7 +37,6 @@
       </div>
     </div>
   </li>
-
 </template>
 
 <script setup>
