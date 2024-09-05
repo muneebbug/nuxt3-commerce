@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-foreground text-white">
     <div
-      class="mx-auto items-center flex w-full max-w-7xl flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
+      class="mx-auto items-center flex flex-col w-full max-w-7xl gap-6 px-6 py-12 text-sm md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
       <div>
         <a class="flex items-center gap-2 text-white md:pt-1" href="/">
           <div class="flex flex-none items-center justify-center w-48">
@@ -14,14 +14,13 @@
       <nav class="text-center md:text-left">
         <ul class="flex flex-col gap-2 md:flex-row md:gap-12">
           <li v-for="(link, index) in navLinks" :key="index">
-            <a :href="link.href"
+            <a :href="link.path"
               class="block h6 p-2 text-lg underline-offset-4 hover:underline md:inline-block dark:hover:text-neutral-300">
-              {{ link.text }}
+              {{ link.title }}
             </a>
           </li>
         </ul>
       </nav>
-
     </div>
 
     <!-- Footer Bottom -->
@@ -39,14 +38,14 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const colorMode = useColorMode();
+const { getMenu } = useShopify();
+import type { Menu } from '~/lib/shopify/types';
+const navLinks = ref([]) as Ref<Menu[]>;
+
 colorMode.preference = 'light';
-const navLinks = [
-  { text: "Home", href: "/" },
-  { text: "About", href: "/about" },
-  { text: "Terms & Conditions", href: "/terms-conditions" },
-  { text: "FAQ", href: "/frequently-asked-questions" },
-  { text: "Contact", href: "/contact" },
-]
+onMounted(async () => {
+  navLinks.value = await getMenu('footer');
+});
 </script>
