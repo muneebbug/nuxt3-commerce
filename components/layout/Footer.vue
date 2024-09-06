@@ -14,10 +14,10 @@
       <nav class="text-center md:text-left">
         <ul class="flex flex-col gap-2 md:flex-row md:gap-12">
           <li v-for="(link, index) in navLinks" :key="index">
-            <a :href="link.path"
+            <NuxtLink :to="link.path"
               class="block h6 p-2 text-lg underline-offset-4 hover:underline md:inline-block dark:hover:text-neutral-300">
               {{ link.title }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </nav>
